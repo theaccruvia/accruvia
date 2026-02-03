@@ -230,26 +230,26 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Get in Touch</h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-center gap-3 cursor-pointer ">
-                <Phone className="w-4 h-4 text-orange-400" /> +91 9374437099
+                <Phone className="w-4 h-4 text-orange-400" /> +97 155 773 6808(Dubai)
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
-                <Mail className="w-4 h-4 text-orange-400" /> accruvia@gmail.com
+                <Phone className="w-4 h-4 text-orange-400" /> +91 9374437099(India)
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
-                <MapPin className="w-4 h-4 text-orange-400" /> Dubai
+                <Mail className="w-4 h-4 text-orange-400" /> theaccruvia@gmail.com
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
-                <MapPin className="w-4 h-4 text-orange-400" /> India
-              </li>
+                <MapPin className="w-4 h-4 text-orange-400" /> Dubai & India
+                </li>
 
               <li className="flex items-center gap-3 cursor-pointer ">
                 <Globe className="w-4 h-4 text-orange-400" />{" "}
                 <a
-                  href="https://www.accruvia.com"
+                  href="https://www.theaccruvia.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  www.accruvia.com
+                  www.theaccruvia.com
                 </a>
               </li>
             </ul>

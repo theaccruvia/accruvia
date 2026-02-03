@@ -21,23 +21,23 @@ export const ContactForm = () => {
           {[
             {
               icon: MapPin,
-              title: "Head Office",
-              desc: "Suite 3, 1330 Ferntree, Gully Road Scoresby, VIC 3179",
+              title: "India Office",
+              desc: "B-1102 Sivanta One Opposite Nalli sarees, Pritamnagar, Near paldi Cross Roads, Ahmedabad- 380007",
             },
             {
               icon: MapPin,
-              title: "Location",
+              title: "Dubai Office",
               desc: "Melbourne, Victoria, Australia",
             },
             {
               icon: Mail,
               title: "Email",
-              desc: "info@accruvia.com",
+              desc: "theaccruvia@gmail.com",
             },
             {
               icon: Phone,
               title: "Phone",
-              desc: "+91 98765 43210",
+              desc: "+91 98989 53563, +97 155 773 6808",
             },
           ].map((item, idx) => (
             <div
