@@ -1,32 +1,24 @@
 import React, { useState } from "react";
 import {
   Linkedin,
-  Facebook,
   Twitter,
   Mail,
-  Phone,
-  Globe,
-  ChevronRight,
-  Award,
   Users,
-  Target,
 } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { motion, AnimatePresence } from "framer-motion";
 
 const TeamSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [selectedMember, setSelectedMember] = useState(null);
 
   const teamMembers = [
     {
-      name: "John Anderson",
+      name: "Dhruv Shah",
       role: "Chief Executive Officer",
       description:
-        "Visionary leader with 15+ years of experience driving organizational growth and innovation in financial services.",
+        "A distinguished professional with extensive experience in accounting and auditing, Dhruv Shah is driven by a vision of excellence and integrity. His comprehensive expertise in financial reporting, regulatory compliance, and audit oversight enables organizations to achieve operational transparency and sustainable financial growth in an ever-evolving business landscape.",
       expertise: ["Strategic Planning", "Business Development", "Leadership"],
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&crop=face",
+      image: "./src/assets/Lucky.jpeg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -35,13 +27,12 @@ const TeamSection = () => {
       stats: { projects: "500+", experience: "15 Years", clients: "200+" },
     },
     {
-      name: "Sarah Williams",
+      name: "Ritesh Patel",
       role: "Chief Financial Officer",
       description:
-        "Financial strategist specializing in corporate finance, risk management, and sustainable growth initiatives.",
+        "Ritesh Patel is a global Talent Acquisition leader with over 15 years of experience across the UAE, India, Europe, Africa, and the U.S. He has worked in cybersecurity, engineering, software, finance, real estate, and hospitality -helping companies hire better and build stronger teams. He designs recruitment strategies that fit the business. Sometimes that means building from scratch. Other times, it is about scaling what is already working.<br/>From executive search to full-time placements, Mr. Ritesh Patel brings clarity and strategy to every hiring challenge.",
       expertise: ["Financial Planning", "Risk Management", "M&A Strategy"],
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&h=600&fit=crop&crop=face",
+      image: "./src/assets/Ritesh.jpeg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -50,13 +41,12 @@ const TeamSection = () => {
       stats: { managed: "$2B+", experience: "12 Years", deals: "50+" },
     },
     {
-      name: "Michael Chen",
-      role: "Head of Technology",
+      name: "Labdhi Shah",
+      role: "Client Manager",
       description:
-        "Tech innovator passionate about digital transformation and building scalable enterprise solutions.",
+        "As a board member overseeing taxation, Labdhi Shah plays a key role in guiding clients through complex tax landscapes with clarity and precision. Her expertise spans tax planning, compliance management, and advisory services, helping businesses optimize their tax positions while maintaining full regulatory adherence.",
       expertise: ["Digital Innovation", "AI & ML", "Cloud Architecture"],
-      image:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=600&h=600&fit=crop&crop=face",
+      image: "./src/assets/Labdhi.jpeg",
       social: {
         linkedin: "#",
         twitter: "#",
@@ -66,305 +56,110 @@ const TeamSection = () => {
     },
   ];
 
-  // Enhanced animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.3,
-      },
+      transition: { staggerChildren: 0.15, delayChildren: 0.3 },
     },
   };
 
   const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 60,
-      scale: 0.85,
-      rotateX: -15,
-    },
+    hidden: { opacity: 0, y: 60, scale: 0.85 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      rotateX: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12,
-        duration: 0.8,
-      },
-    },
-  };
-
-  const floatingAnimation = {
-    y: [0, -10, 0],
-    transition: {
-      duration: 3,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
-  const glowAnimation = {
-    boxShadow: [
-      "0 0 20px rgba(237, 47, 13, 0)",
-      "0 0 40px rgba(237, 47, 13, 0.3)",
-      "0 0 20px rgba(237, 47, 13, 0)",
-    ],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  };
-
-  const statsVariants = {
-    hidden: { scale: 0, opacity: 0 },
-    visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 200,
-        damping: 15,
-        delay: 0.5,
-      },
+      transition: { type: "spring", stiffness: 100, damping: 12 },
     },
   };
 
   return (
-    <section className="relative py-2  overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
-        <motion.div
-          className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-200/20 to-purple-200/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, 30, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-        <motion.div
-          className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-tr from-blue-200/20 to-cyan-200/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -30, 0],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        />
-      </div>
-
+    <section className="relative py-2 overflow-hidden mb-20">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
-          <motion.div
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500/10 to-purple-500/10 backdrop-blur-sm px-6 py-2 rounded-full mb-6"
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ type: "spring", stiffness: 200, delay: 0.2 }}
-          >
-            <Users className="w-5 h-5 text-orange-500" />
-            <span className="text-sm font-semibold bg-primary  bg-clip-text text-transparent">
-              MEET THE EXPERTS
-            </span>
-          </motion.div>
-
-          <motion.h2
-            className="text-5xl lg:text-6xl font-bold mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            Our{" "}
-            <span className="bg-primary  bg-clip-text text-transparent">
-              Leadership
-            </span>{" "}
-            Team
-          </motion.h2>
-
-          <motion.p
-            className="text-lg text-gray-600 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Dedicated professionals committed to driving innovation and
-            delivering exceptional results for our clients worldwide.
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto items-stretch"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
+          viewport={{ once: true }}
         >
           {teamMembers.map((member, index) => (
             <motion.div
               key={index}
               variants={cardVariants}
-              animate={hoveredIndex === index ? floatingAnimation : {}}
               onHoverStart={() => setHoveredIndex(index)}
               onHoverEnd={() => setHoveredIndex(null)}
-              className="relative"
+              className="relative h-full"
             >
-              <motion.div
-                animate={hoveredIndex === index ? glowAnimation : {}}
-                className="relative group"
-              >
-                <Card className="relative overflow-hidden border-0 shadow-xl bg-white/80 backdrop-blur-sm transition-all duration-500 hover:shadow-2xl">
-                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-red-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="absolute inset-[1px] bg-white rounded-lg" />
-
-                  <div className="relative p-8">
-                    <motion.div
-                      className="relative mb-6 mx-auto w-48 h-48"
-                      whileHover={{ scale: 1.05, rotateY: 10 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-purple-600 rounded-full opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
-                      <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl">
-                        <img
-                          src={member.image}
-                          alt={member.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <motion.div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                      </div>
-
-                      <motion.div
-                        className="absolute bottom-2 right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-white"
-                        animate={{ scale: [1, 1.2, 1] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                      />
-                    </motion.div>
-
-                    <motion.div
-                      className="text-center mb-4"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 }}
-                    >
-                      <h3 className="text-2xl font-bold text-gray-800 mb-1">
-                        {member.name}
-                      </h3>
-                      <p className="text-sm font-semibold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent mb-3">
-                        {member.role}
-                      </p>
-                      <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                        {member.description}
-                      </p>
-                    </motion.div>
-
-                    <div className="flex flex-wrap gap-2 justify-center mb-6">
-                      {member.expertise.map((skill, skillIndex) => (
-                        <motion.span
-                          key={skillIndex}
-                          className="px-3 py-1 text-xs font-medium bg-gradient-to-r from-orange-100 to-purple-100 text-gray-700 rounded-full"
-                          initial={{ scale: 0 }}
-                          whileInView={{ scale: 1 }}
-                          viewport={{ once: true }}
-                          transition={{ delay: 0.4 + skillIndex * 0.1 }}
-                        >
-                          {skill}
-                        </motion.span>
-                      ))}
-                    </div>
-
-                    <motion.div
-                      className="grid grid-cols-3 gap-2 mb-6 pt-4 border-t border-gray-100"
-                      variants={statsVariants}
-                      initial="hidden"
-                      whileInView="visible"
-                      viewport={{ once: true }}
-                    >
-                      {Object.entries(member.stats).map(
-                        ([key, value], statIndex) => (
-                          <div key={statIndex} className="text-center">
-                            <p className="text-lg font-bold bg-gradient-to-r from-orange-500 to-purple-600 bg-clip-text text-transparent">
-                              {value}
-                            </p>
-                            <p className="text-xs text-gray-500 capitalize">
-                              {key}
-                            </p>
-                          </div>
-                        )
-                      )}
-                    </motion.div>
-
-                    <div className="flex justify-center gap-3">
-                      <motion.a
-                        href={member.social.linkedin}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                        whileHover={{ scale: 1.1, rotateZ: 5 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Linkedin className="w-5 h-5" />
-                      </motion.a>
-                      <motion.a
-                        href={member.social.twitter}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-sky-400 to-sky-500 flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                        whileHover={{ scale: 1.1, rotateZ: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Twitter className="w-5 h-5" />
-                      </motion.a>
-                      <motion.a
-                        href={`mailto:${member.social.email}`}
-                        className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300"
-                        whileHover={{ scale: 1.1, rotateZ: 5 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <Mail className="w-5 h-5" />
-                      </motion.a>
-                    </div>
-
-                    <AnimatePresence>
-                      {hoveredIndex === index && (
-                        <motion.div
-                          className="absolute inset-0 bg-gradient-to-t from-orange-500/10 to-purple-500/10 pointer-events-none"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.3 }}
-                        />
-                      )}
-                    </AnimatePresence>
+              <Card className="relative h-full flex flex-col overflow-hidden shadow-xl bg-white/80 backdrop-blur-sm">
+                <div className="relative p-8 flex flex-col h-full">
+                  <div className="mb-6 mx-auto w-48 h-48 rounded-full overflow-hidden">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </Card>
-              </motion.div>
+
+                  <div className="text-center mb-4 flex-grow">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-1">
+                      {member.name}
+                    </h3>
+                    <p className="text-sm font-semibold text-orange-500 mb-3">
+                      {member.role}
+                    </p>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {member.description}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 justify-center mb-6">
+                    {member.expertise.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-xs bg-orange-100 rounded-full"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-3 gap-2 mb-6 pt-4 border-t">
+                    {Object.entries(member.stats).map(([key, value], i) => (
+                      <div key={i} className="text-center">
+                        <p className="font-bold text-orange-500">{value}</p>
+                        <p className="text-xs text-gray-500 capitalize">{key}</p>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="flex justify-center gap-3 mt-auto">
+                    <a href={member.social.linkedin}>
+                      <Linkedin />
+                    </a>
+                    <a href={member.social.twitter}>
+                      <Twitter />
+                    </a>
+                    <a href={`mailto:${member.social.email}`}>
+                      <Mail />
+                    </a>
+                  </div>
+
+                  <AnimatePresence>
+                    {hoveredIndex === index && (
+                      <motion.div
+                        className="absolute inset-0 bg-orange-100/20 pointer-events-none"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                      />
+                    )}
+                  </AnimatePresence>
+                </div>
+              </Card>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-         
         </motion.div>
       </div>
     </section>
