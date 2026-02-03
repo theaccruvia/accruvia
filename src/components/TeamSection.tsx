@@ -17,7 +17,7 @@ const TeamPage = () => {
         "A distinguished professional with extensive experience in accounting and auditing, Dhruv Shah is driven by a vision of excellence and integrity. His comprehensive expertise in financial reporting, regulatory compliance, and audit oversight enables organizations to achieve operational transparency and sustainable financial growth in an ever-evolving business landscape.",
       image: Lucky,
       social: {
-        linkedin: "linkedin.com/in/dhruv-shah-245195bb",
+        linkedin: "https://www.linkedin.com/in/dhruv-shah-245195bb",
         email: "theaccruvia@gmail.com",
       },
     },
