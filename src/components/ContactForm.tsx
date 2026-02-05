@@ -37,7 +37,7 @@ export const ContactForm = () => {
             {
               icon: Phone,
               title: "Phone",
-              desc: "+91 98989 53563, +97 155 773 6808",
+              desc: "+91 98989 53563",
             },
           ].map((item, idx) => (
             <div

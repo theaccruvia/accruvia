@@ -18,7 +18,7 @@ const TeamPage = () => {
       image: Lucky,
       social: {
         linkedin: "https://www.linkedin.com/in/dhruv-shah-245195bb",
-        email: "theaccruvia@gmail.com",
+        email: "info@theaccruvia.com",
       },
     },
     // {
@@ -40,7 +40,7 @@ const TeamPage = () => {
       image: Labdhi,
       social: {
         linkedin: "https://www.linkedin.com/in/ca-labdhi-shah-6aa874103",
-        email: "theaccruvia@gmail.com",
+        email: "info@theaccruvia.com",
       },
     },
   ];

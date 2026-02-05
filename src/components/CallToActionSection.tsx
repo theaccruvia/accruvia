@@ -10,7 +10,7 @@ const CallToActionSection = () => {
     <section className="lg:py-10 relative">
       <div className="container mx-auto px-4">
         <div
-          className="relative  rounded-2xl p-6 sm:p-10 lg:pl-40 "
+          className="relative  rounded-2xl sm:p-10 lg:pl-40 "
           style={{
             background:
               "linear-gradient(to right, hsl(25, 95%, 20%) 0%, hsl(25, 95%, 53%) 50%, hsl(25, 95%, 20%) 100%)",
@@ -20,7 +20,7 @@ const CallToActionSection = () => {
             initial={{ y: 0 }}
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="hidden lg:block absolute -left-10 -top-48 w-[500px] xl:w-[650px] drop-shadow-2xl"
+            className="hidden lg:block absolute -left-10 -top-40  w-[500px] xl:w-[650px] drop-shadow-2xl"
           >
             <img src={laptopImage} alt="Laptop" className="w-full h-auto" />
           </motion.div>
