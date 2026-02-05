@@ -236,7 +236,7 @@ const Footer = () => {
                 <Phone className="w-4 h-4 text-orange-400" /> +91 9374437099(India)
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
-                <Mail className="w-4 h-4 text-orange-400" /> theaccruvia@gmail.com
+                <Mail className="w-4 h-4 text-orange-400" /> info@theaccruvia.com
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
                 <MapPin className="w-4 h-4 text-orange-400" /> Dubai & India

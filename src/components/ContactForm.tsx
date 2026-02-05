@@ -27,12 +27,12 @@ export const ContactForm = () => {
             {
               icon: MapPin,
               title: "Dubai Office",
-              desc: "Melbourne, Victoria, Australia",
+              desc: "FZCO, Unit 3706, Platinum Tower JLT, Plot 12, Jumeirah Lakes Towers, Dubai, UAE",
             },
             {
               icon: Mail,
               title: "Email",
-              desc: "theaccruvia@gmail.com",
+              desc: "info@theaccruvia.com",
             },
             {
               icon: Phone,

@@ -1,7 +1,3 @@
-import { Mail, Phone, MapPin } from "lucide-react";
-import Header from "./Header";
-import Footer from "./Footer";
-import heroIllustration from "@/assets/hero-illustration.jpg";
 import ContactForm from "./ContactForm";
 import { contactus } from "@/const";
 

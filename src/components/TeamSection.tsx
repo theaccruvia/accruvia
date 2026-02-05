@@ -12,7 +12,7 @@ const TeamPage = () => {
   const teamMembers = [
     {
       name: "Dhruv Shah",
-      role: "Co-Founder",
+      role: "Founder",
       description:
         "A distinguished professional with extensive experience in accounting and auditing, Dhruv Shah is driven by a vision of excellence and integrity. His comprehensive expertise in financial reporting, regulatory compliance, and audit oversight enables organizations to achieve operational transparency and sustainable financial growth in an ever-evolving business landscape.",
       image: Lucky,
@@ -21,17 +21,17 @@ const TeamPage = () => {
         email: "theaccruvia@gmail.com",
       },
     },
-    {
-      name: "Ritesh Patel",
-      role: "Co-Founder",
-      description:
-        "Ritesh Patel is a global Talent Acquisition leader with over 15 years of experience across the UAE, India, Europe, Africa, and the U.S. He has worked in cybersecurity, engineering, software, finance, real estate, and hospitality -helping companies hire better and build stronger teams. He designs recruitment strategies that fit the business. Sometimes that means building from scratch. Other times, it is about scaling what is already working. From executive search to full-time placements, Mr. Ritesh Patel brings clarity and strategy to every hiring challenge.",
-      image: Ritesh,
-      social: {
-        linkedin: "https://www.linkedin.com/in/tbbt-riteshpatel/",
-        email: "theaccruvia@gmail.com",
-      },
-    },
+    // {
+    //   name: "Ritesh Patel",
+    //   role: "Co-Founder",
+    //   description:
+    //     "Ritesh Patel is a global Talent Acquisition leader with over 15 years of experience across the UAE, India, Europe, Africa, and the U.S. He has worked in cybersecurity, engineering, software, finance, real estate, and hospitality -helping companies hire better and build stronger teams. He designs recruitment strategies that fit the business. Sometimes that means building from scratch. Other times, it is about scaling what is already working. From executive search to full-time placements, Mr. Ritesh Patel brings clarity and strategy to every hiring challenge.",
+    //   image: Ritesh,
+    //   social: {
+    //     linkedin: "https://www.linkedin.com/in/tbbt-riteshpatel/",
+    //     email: "theaccruvia@gmail.com",
+    //   },
+    // },
     {
       name: "Labdhi Shah",
       role: "Client Manager",
@@ -79,7 +79,8 @@ const TeamPage = () => {
       <section className="pb-20">
         <div className="container mx-auto px-4">
           <motion.div
-            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
+            // className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto" for three people
+            className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
