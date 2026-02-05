@@ -21,14 +21,14 @@ export const ContactForm = () => {
           {[
             {
               icon: MapPin,
-              title: "India Office",
+              title: "Office",
               desc: "B-1102 Sivanta One Opposite Nalli sarees, Pritamnagar, Near paldi Cross Roads, Ahmedabad- 380007",
             },
-            {
-              icon: MapPin,
-              title: "Dubai Office",
-              desc: "FZCO, Unit 3706, Platinum Tower JLT, Plot 12, Jumeirah Lakes Towers, Dubai, UAE",
-            },
+            // {
+            //   icon: MapPin,
+            //   title: "Dubai Office",
+            //   desc: "FZCO, Unit 3706, Platinum Tower JLT, Plot 12, Jumeirah Lakes Towers, Dubai, UAE",
+            // },
             {
               icon: Mail,
               title: "Email",

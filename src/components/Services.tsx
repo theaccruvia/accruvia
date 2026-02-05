@@ -110,7 +110,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image }) =
 const ServicesGrid = ({ services }: { services: Offering[] }) => {
   return (
     <section className="py-16 lg:py-2 bg-gradient-to-br from-orange-50 via-white to-orange-100">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 mb-8">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             //@ts-ignore

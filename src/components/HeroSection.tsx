@@ -129,7 +129,7 @@ const navigate=useNavigate()
                 At AccRuvia, we helps businesses run better by managing the
                 financial and administrative tasks that often slow them
                 down—accounting, payroll, tax, and support services. With
-                operations across India and Dubai, we provide reliable support
+                operations across India we provide reliable support
                 so you can focus on growth.
               </motion.p>
 

@@ -86,20 +86,20 @@ const AboutSection = () => {
               <p>
                 With a{" "}
                 <span className="font-semibold text-black">
-                  strong presence across India
+                  strong presence across India 
                 </span>
-                and an{" "}
+                {/* and an{" "}
                 <span className="font-semibold text-orange-600">
                   overseas base in Dubai
-                </span>
-                , AccRuvia supports clients with regional insight and dependable
+                </span> */}
+                    AccRuvia supports clients with regional insight and dependable
                 service, helping businesses thrive.
               </p>
 
               <p>
                 Our focus is simple:{" "}
                 <span className="font-semibold text-orange-600">
-                  let businesses grow
+                  let businesses grow, 
                 </span>
                 while we manage the{" "}
                 <span className="font-semibold text-black">back-end work</span>.
