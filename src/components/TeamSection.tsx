@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Linkedin, Twitter, Mail } from "lucide-react";
 import { Card } from "@/components/ui/card";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Lucky from "@/assets/Lucky.jpeg";
 import Ritesh from "@/assets/Ritesh.jpeg";
 import Labdhi from "@/assets/Labdhi.jpeg";
@@ -21,17 +21,17 @@ const TeamPage = () => {
         email: "info@theaccruvia.com",
       },
     },
-    // {
-    //   name: "Ritesh Patel",
-    //   role: "Co-Founder",
-    //   description:
-    //     "Ritesh Patel is a global Talent Acquisition leader with over 15 years of experience across the UAE, India, Europe, Africa, and the U.S. He has worked in cybersecurity, engineering, software, finance, real estate, and hospitality -helping companies hire better and build stronger teams. He designs recruitment strategies that fit the business. Sometimes that means building from scratch. Other times, it is about scaling what is already working. From executive search to full-time placements, Mr. Ritesh Patel brings clarity and strategy to every hiring challenge.",
-    //   image: Ritesh,
-    //   social: {
-    //     linkedin: "https://www.linkedin.com/in/tbbt-riteshpatel/",
-    //     email: "theaccruvia@gmail.com",
-    //   },
-    // },
+    {
+      name: "Ritesh Patel",
+      role: "Co-Founder",
+      description:
+        "Ritesh Patel is a global Talent Acquisition leader with over 15 years of experience across the UAE, India, Europe, Africa, and the U.S. He has worked in cybersecurity, engineering, software, finance, real estate, and hospitality -helping companies hire better and build stronger teams. He designs recruitment strategies that fit the business. Sometimes that means building from scratch. Other times, it is about scaling what is already working. From executive search to full-time placements, Mr. Ritesh Patel brings clarity and strategy to every hiring challenge.",
+      image: Ritesh,
+      social: {
+        linkedin: "https://www.linkedin.com/in/tbbt-riteshpatel/",
+        email: "theaccruvia@gmail.com",
+      },
+    },
     {
       name: "Labdhi Shah",
       role: "Client Manager",
@@ -45,7 +45,7 @@ const TeamPage = () => {
     },
   ];
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -53,7 +53,7 @@ const TeamPage = () => {
     },
   };
 
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
       opacity: 1,
@@ -99,8 +99,7 @@ const TeamPage = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover"
-                    />
+                      className="w-full h-full object-cover" />
                   </div>
 
                   {/* Content */}
@@ -136,8 +135,7 @@ const TeamPage = () => {
                         className="absolute inset-0 bg-orange-100/20 pointer-events-none"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                      />
+                        exit={{ opacity: 0 }} />
                     )}
                   </AnimatePresence>
                 </Card>
