@@ -29,7 +29,7 @@ const TeamPage = () => {
       image: Ritesh,
       social: {
         linkedin: "https://www.linkedin.com/in/tbbt-riteshpatel/",
-        email: "theaccruvia@gmail.com",
+        email: "info@theaccruvia.com",
       },
     },
     {
@@ -80,7 +80,7 @@ const TeamPage = () => {
         <div className="container mx-auto px-4">
           <motion.div
             // className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto" for three people
-            className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2 max-w-7xl mx-auto"
+            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
