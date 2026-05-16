@@ -16,6 +16,7 @@ import {
 import { motion } from "framer-motion";
 import logo from "@/assets/logo.png";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { RECRUITMENT, SERVICES } from "@/const";
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -34,55 +35,55 @@ const Footer = () => {
     company: [
       { name: "About Us", href: "/#about", icon: Users },
       { name: "Our Team", href: "/#team", icon: Award },
-      { name: "Careers", href: "/#services", badge: "Hiring" },
       { name: "Contact", href: "/contact-us", icon: Mail },
     ],
     services: [
       {
         name: "Accounting & Bookkeeping",
-        href: "services",
+        href: "/services",
         data: SERVICES[0].moreData,
       },
       {
         name: "Payroll Services",
-        href: "services",
+        href: "/services",
         data: SERVICES[1].moreData,
       },
-      { name: "Tax Services", href: "services", data: SERVICES[3].moreData },
+      { name: "Tax Services", href: "/services", data: SERVICES[3].moreData },
       {
         name: "Administrative Support",
-        href: "services",
+        href: "/services",
         data: SERVICES[4].moreData,
       },
-      { name: "Audit Support", href: "services", data: SERVICES[2].moreData },
+      { name: "Audit Support", href: "/services", data: SERVICES[2].moreData },
       {
         name: "Outsourcing Services",
-        href: "services",
+        href: "/services",
         data: SERVICES[5].moreData,
       },
     ],
     hiring: [
       {
         name: "EOR - Employee on Record",
-        href: "services",
+        href: "/services",
         data: RECRUITMENT[0].moreData,
       },
       {
         name: "Permanent Hiring",
-        href: "services",
+        href: "/services",
         data: RECRUITMENT[1].moreData,
       },
       {
         name: "Contract Staffing",
-        href: "services",
+        href: "/services",
         data: RECRUITMENT[2].moreData,
       },
       {
         name: "Executive Search (CXOs)",
-        href: "services",
+        href: "/services",
         data: RECRUITMENT[3].moreData,
       },
     ],
+
     resources: [
       { name: "Privacy Policy", href: "#" },
       { name: "Terms of Service", href: "#" },
@@ -213,17 +214,12 @@ const Footer = () => {
                   key={i}
                   className="flex gap-2 items-center hover:text-orange-400 cursor-pointer "
                 >
-                  <a href={c.href}>
-                    {c.name}
-                    {c.badge && (
-                      <span className="px-2 py-0.5 text-xs bg-orange-500/20 text-orange-400 rounded-full cursor-pointer ">
-                        {c.badge}
-                      </span>
-                    )}
-                  </a>
+                  <HashLink smooth to={c.href}>{c.name}</HashLink>
                 </li>
               ))}
             </ul>
+
+
           </div>
 
           <div>

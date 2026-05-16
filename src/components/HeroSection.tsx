@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button";
 import heroIllustration from "@/assets/hero.png";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
+
 import { useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { useEffect } from "react";
 
+
 const HeroSection = () => {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -17,7 +20,7 @@ const HeroSection = () => {
     },
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 60,
@@ -30,8 +33,6 @@ const HeroSection = () => {
       scale: 1,
       filter: "blur(0px)",
       transition: {
-        duration: 1,
-        ease: [0.25, 0.46, 0.45, 0.94], // Custom cubic-bezier
         type: "spring",
         stiffness: 100,
         damping: 15,
@@ -39,7 +40,7 @@ const HeroSection = () => {
     },
   };
 
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { 
       opacity: 0, 
       scale: 0.7, 
@@ -54,8 +55,6 @@ const HeroSection = () => {
       rotateY: 0,
       filter: "blur(0px)",
       transition: {
-        duration: 1.2,
-        ease: [0.25, 0.46, 0.45, 0.94],
         type: "spring",
         stiffness: 80,
         damping: 20,
@@ -63,7 +62,7 @@ const HeroSection = () => {
     },
   };
 
-  const buttonVariants = {
+  const buttonVariants: Variants = {
     hidden: { 
       opacity: 0, 
       y: 40,
@@ -74,8 +73,6 @@ const HeroSection = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.8,
-        ease: [0.25, 0.46, 0.45, 0.94],
         type: "spring",
         stiffness: 120,
         damping: 12,
@@ -83,6 +80,7 @@ const HeroSection = () => {
     },
   };
 const navigate=useNavigate()
+
 
   return (
     <section className=" py-20 ">
@@ -171,15 +169,16 @@ const navigate=useNavigate()
                     damping: 17,
                   }}
                 >
-                  <a href="#services">
+                  <HashLink smooth to="/#services">
                     <Button
                       size="lg"
-                      className="text-base sm:text-lg px-6 sm:px-8 font-bold py-4 sm:py-6 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors duration-300"
+                      className="text-base sm:text-lg px-6 sm:px-8 font-bold py-4 sm:py-6 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white transition-colors duration-300 w-full"
                     >
                       Explore Our Services
                     </Button>
-                  </a>
+                  </HashLink>
                 </motion.div>
+
               </motion.div>
             </div>
           </motion.div>

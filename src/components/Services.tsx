@@ -62,17 +62,20 @@ import heroImage from "@/assets/1.svg";
 import Carousel from "./Carosel";
 import ContactForm from "./ContactForm";
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { MoreData, Offering } from "@/const";
 import { useEffect } from "react";
 
 interface HeroSectionProps {
   title: string;
   description: string;
-  image:string
+  image:string;
+  navigate: any;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image, navigate }) => {
+
   return (
     <section className="bg-hero-bg pt-4 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 xl:-mt-12">
@@ -85,13 +88,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description,image }) =
               {description}
             </p>
             <div className="mt-4 md:mt-6 flex justify-center lg:justify-start gap-4">
-              <button className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow hover:shadow-lg transition">
+              <button 
+                onClick={() => navigate("/contact-us")}
+                className="px-6 py-3 bg-gradient-to-r from-orange-500 to-red-500 text-white font-semibold rounded-lg shadow hover:shadow-lg transition"
+              >
                 Get Started
               </button>
-              <button className="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition">
-                Learn More
-              </button>
+              <HashLink smooth to="/#services">
+                <button className="px-6 py-3 border border-orange-500 text-orange-500 font-semibold rounded-lg hover:bg-orange-50 transition">
+                  Learn More
+                </button>
+              </HashLink>
             </div>
+
           </div>
 
           <div className="flex justify-center lg:justify-end mt-8 lg:mt-0">
@@ -147,18 +156,32 @@ const ServicesGrid = ({ services }: { services: Offering[] }) => {
 
 const ServicePage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  
+  // Safety check for location.state
+  if (!location.state || !location.state.service) {
+    useEffect(() => {
+      navigate("/");
+    }, []);
+    return null;
+  }
+
   const serviceData: MoreData = JSON.parse(location.state.service);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [serviceData]);
+
   return (
     <div className="bg-gradient-to-br from-orange-50 via-white to-orange-100">
       <HeroSection
         title={serviceData.title}
         description={serviceData.description}
         image={serviceData.image}
+        navigate={navigate}
       />
       <ServicesGrid services={serviceData.offerings} />
+
 
       <div className=" xl:flex items-center justify-center hidden flex-col  bg-gradient-to-br from-orange-50 via-white to-orange-100  p-5">
         <div className="text-center mb-12">

@@ -1,27 +1,30 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
+import { useLocation } from 'react-router-dom';
 
 const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
-  useEffect(() => {
-    let lenis: Lenis | null = null;
+  const { pathname } = useLocation();
+  const lenisRef = useRef<Lenis | null>(null);
 
+  useEffect(() => {
     const initLenis = () => {
       try {
-        lenis = new Lenis({
+        const lenis = new Lenis({
           duration: 1.2,
           easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          direction: 'vertical',
-          gestureDirection: 'vertical',
-          smooth: true,
-          mouseMultiplier: 1,
-          smoothTouch: false,
+          orientation: 'vertical',
+          gestureOrientation: 'vertical',
+          smoothWheel: true,
+          wheelMultiplier: 1,
           touchMultiplier: 2,
           infinite: false,
         });
 
+        lenisRef.current = lenis;
+
         function raf(time: number) {
-          if (lenis) {
-            lenis.raf(time);
+          if (lenisRef.current) {
+            lenisRef.current.raf(time);
             requestAnimationFrame(raf);
           }
         }
@@ -30,8 +33,8 @@ const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
 
         // Handle resize events
         const handleResize = () => {
-          if (lenis) {
-            lenis.resize();
+          if (lenisRef.current) {
+            lenisRef.current.resize();
           }
         };
 
@@ -39,9 +42,9 @@ const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
 
         return () => {
           window.removeEventListener('resize', handleResize);
-          if (lenis) {
-            lenis.destroy();
-            lenis = null;
+          if (lenisRef.current) {
+            lenisRef.current.destroy();
+            lenisRef.current = null;
           }
         };
       } catch (error) {
@@ -57,14 +60,24 @@ const SmoothScrollProvider = ({ children }: { children: React.ReactNode }) => {
     }
 
     return () => {
-      if (lenis) {
-        lenis.destroy();
-        lenis = null;
+      if (lenisRef.current) {
+        lenisRef.current.destroy();
+        lenisRef.current = null;
       }
     };
   }, []);
+
+  // Scroll to top on route change using Lenis
+  useEffect(() => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
 
   return <>{children}</>;
 };
 
 export default SmoothScrollProvider;
+

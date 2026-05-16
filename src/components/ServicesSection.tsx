@@ -169,8 +169,6 @@ const ServicesSection = () => {
                   scale: 1.03,
                   rotateY: index % 2 === 0 ? 2 : -2,
                   transition: {
-                    duration: 0.4,
-                    ease: [0.25, 0.46, 0.45, 0.94],
                     type: "spring",
                     stiffness: 300,
                     damping: 20,
@@ -191,11 +189,11 @@ const ServicesSection = () => {
                         scale: 1.1,
                         rotate: 5,
                         transition: {
-                          duration: 0.3,
                           type: "spring",
                           stiffness: 400,
                           damping: 15,
                         },
+
                       }}
                     >
                       <motion.div
@@ -252,11 +250,11 @@ const ServicesSection = () => {
                           scale: 1.05,
                           x: 1,
                           transition: {
-                            duration: 0.3,
                             type: "spring",
                             stiffness: 400,
                             damping: 15,
                           },
+
                         }}
                         whileTap={{
                           scale: 0.95,
