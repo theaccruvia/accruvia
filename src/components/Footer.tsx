@@ -252,8 +252,21 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t  border-gray-700/50 bg-gray-800/30 backdrop-blur-sm py-6 text-center text-gray-400 text-sm">
-          © {new Date().getFullYear()} AccRuvia. All rights reserved.
+        <div className="border-t border-gray-700/50 bg-gray-800/30 backdrop-blur-sm py-6 text-gray-400 text-sm">
+          <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <p className="pl-10">© {new Date().getFullYear()} AccRuvia. All rights reserved.</p>
+            <p className="pr-5">
+              Design with ❤️ by{" "}
+              <a 
+                href="https://vertexmediahouse.com/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-orange-400 transition-colors"
+              >
+                Vertex Media House
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
