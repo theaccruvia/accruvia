@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -7,9 +6,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { motion } from "framer-motion";
+
+import { motion, Variants } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { SERVICES } from "@/const";
+
 import {
   Calculator,
   Users,
@@ -38,8 +39,10 @@ import {
   Cpu,
   Factory,
   Brain,
+  LucideIcon,
 } from "lucide-react";
-const iconMap = {
+
+const iconMap: Record<string, LucideIcon> = {
   Calculator,
   Users,
   FileText,
@@ -68,9 +71,11 @@ const iconMap = {
   Factory,
   Brain,
 };
-const ServicesSection = () => {
 
-  const containerVariants = {
+const ServicesSection = () => {
+  const navigate = useNavigate();
+
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -81,10 +86,25 @@ const ServicesSection = () => {
     },
   };
 
-  const getCardVariants = (index: number) => ({
+  const headerVariants: Variants = {
     hidden: {
       opacity: 0,
-      x: index % 2 === 0 ? -50 : 50, 
+      y: -20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const getCardVariants = (index: number): Variants => ({
+    hidden: {
+      opacity: 0,
+      x: index % 2 === 0 ? -50 : 50,
       y: 20,
     },
     visible: {
@@ -98,25 +118,11 @@ const ServicesSection = () => {
     },
   });
 
-  const headerVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
-  };
-
-  
-const navigate=useNavigate()
   return (
-    <section id="services" className="py-10 lg:py-20  ">
+    <section id="services" className="py-10 lg:py-20">
       <div className="container mx-auto px-4">
         <motion.div
-          className="text-center lg:mb-16  "
+          className="text-center lg:mb-16"
           variants={headerVariants}
           initial="hidden"
           whileInView="visible"
@@ -125,16 +131,22 @@ const navigate=useNavigate()
           <span className="inline-block px-4 py-1 text-sm font-semibold text-primary bg-primary/10 rounded-full mb-4">
             Explore Our Services
           </span>
+
           <motion.h2
-            className="text-4xl lg:text-5xl font-bold mb-6"
+            className="text-4xl lg:text-5xl font-bold mb-4"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{
+              duration: 0.6,
+              delay: 0.4,
+              ease: "easeOut",
+            }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-bold mb-4">
-              Our <span className="text-primary">Professional Services</span>
-            </h2>{" "}
+            Our{" "}
+            <span className="text-primary">
+              Professional Services
+            </span>
           </motion.h2>
         </motion.div>
 
@@ -146,8 +158,8 @@ const navigate=useNavigate()
           viewport={{ once: true, amount: 0.2 }}
         >
           {SERVICES.map((service, index) => {
-            //@ts-ignore
             const Icon = iconMap[service.icon];
+
             return (
               <motion.div
                 key={index}
@@ -195,6 +207,7 @@ const navigate=useNavigate()
                           transition: { duration: 0.2 },
                         }}
                       />
+
                       <motion.div
                         whileHover={{
                           scale: 1.1,
@@ -212,7 +225,7 @@ const navigate=useNavigate()
                       }}
                       className="group-hover:text-white transition-all duration-300"
                     >
-                      <CardTitle className="text-xl font-bold  ">
+                      <CardTitle className="text-xl font-bold">
                         {service.title}
                       </CardTitle>
                     </motion.div>
@@ -222,13 +235,13 @@ const navigate=useNavigate()
                     <motion.div
                       whileHover={{
                         x: 1,
-                        transition: { duration: 0.2, delay: 0.1 },
+                        transition: {
+                          duration: 0.2,
+                          delay: 0.1,
+                        },
                       }}
                     >
-                      <CardDescription
-                        className={`group-hover:text-white leading-relaxed transition-all duration-300 
-                      }`}
-                      >
+                      <CardDescription className="group-hover:text-white leading-relaxed transition-all duration-300">
                         {service.description}
                       </CardDescription>
                     </motion.div>
@@ -251,7 +264,7 @@ const navigate=useNavigate()
                         }}
                       >
                         <Button
-                          className="w-full py-6 bg-cyan flex justify-start items-center font-bold text-decoration-none underline-none lg:text-xl border border-transparent group-hover:border-white group-hover:bg-white/40 text-start transition-all duration-500 text-white relative overflow-hidden"
+                          className="w-full py-6 bg-cyan flex justify-start items-center font-bold lg:text-xl border border-transparent group-hover:border-white group-hover:bg-white/40 text-start transition-all duration-500 text-white relative overflow-hidden"
                           onClick={() =>
                             navigate("/services", {
                               state: {

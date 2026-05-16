@@ -6,10 +6,11 @@ import AboutSection from "@/components/AboutSection";
 import SoftwareSection from "@/components/SoftwareSection";
 import TeamSection from "@/components/TeamSection";
 import CallToActionSection from "@/components/CallToActionSection";
-import { motion } from "framer-motion";
+
+import { motion, Variants } from "framer-motion";
 
 const Index = () => {
-  const sectionVariants = {
+  const sectionVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 30,
@@ -24,7 +25,7 @@ const Index = () => {
     },
   };
 
-  const heroVariants = {
+  const heroVariants: Variants = {
     hidden: {
       opacity: 0,
       y: 40,
@@ -40,7 +41,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100 ">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-orange-100">
       <main>
         <motion.section
           id="top"
@@ -52,7 +53,7 @@ const Index = () => {
         </motion.section>
 
         <motion.section
-          className="w-full flex justify-center "
+          className="w-full flex justify-center"
           variants={sectionVariants}
           initial="hidden"
           whileInView="visible"
@@ -117,15 +118,7 @@ const Index = () => {
         >
           <CallToActionSection />
         </motion.section>
-        
       </main>
-
-      <motion.div
-        variants={sectionVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.1 }}
-      ></motion.div>
     </div>
   );
 };
