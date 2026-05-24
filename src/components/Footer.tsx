@@ -226,16 +226,16 @@ const Footer = () => {
             <h3 className="font-bold text-lg mb-4">Get in Touch</h3>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-center gap-3 cursor-pointer ">
-                <Phone className="w-4 h-4 text-orange-400" /> +97 155 773 6808(Dubai)
+                <Phone className="w-4 h-4 text-orange-400" /> +91 98989 53563(India)
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
-                <Phone className="w-4 h-4 text-orange-400" /> +91 98989 53563
+                <Phone className="w-4 h-4 text-orange-400" /> +97 155 773 6808(Dubai)
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
                 <Mail className="w-4 h-4 text-orange-400" /> info@theaccruvia.com
               </li>
               <li className="flex items-center gap-3 cursor-pointer ">
-                <MapPin className="w-4 h-4 text-orange-400" /> India
+                <MapPin className="w-4 h-4 text-orange-400" /> India & Dubai
                 </li>
 
               <li className="flex items-center gap-3 cursor-pointer ">

@@ -22,13 +22,13 @@ export const ContactForm = () => {
           {[
             {
               icon: MapPin,
-              title: "Office",
+              title: "Office(India)",
               desc: "B-1102 Sivanta One Opposite Nalli sarees, Pritamnagar, Near paldi Cross Roads, Ahmedabad- 380007",
             },
             {
               icon: MapPin,
-              title: "Office",
-              desc: "Unit 3706, Platinum Tower JLT,Plot 12, Jumeirah Lakes Towers",
+              title: "Office(Dubai)",
+              desc: "Unit 3706, Platinum Tower JLT, Plot 12, Jumeirah Lakes Towers, Dubai, UAE - 336482",
             },
             {
               icon: Mail,
@@ -38,7 +38,7 @@ export const ContactForm = () => {
             {
               icon: Phone,
               title: "Phone",
-              desc: "+91 98989 53563, +97 155 773 6808(Dubai)",
+              desc: "+91 98989 53563(India), +97 155 773 6808(Dubai)",
             },
           ].map((item, idx) => (
             <div
