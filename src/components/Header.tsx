@@ -1,4 +1,6 @@
-import { Phone, Mail } from "lucide-react";
+import { Phone, Mail, Menu, X, Home, Briefcase, Info, Users as UsersIcon, MessageSquare } from "lucide-react";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import logo from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +9,17 @@ import { StickyBanner } from "./ui/sticky-banner";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const menuItems = [
+    { name: "Home", href: "/#top", icon: Home },
+    { name: "Services", href: "/#services", icon: Briefcase },
+    { name: "About Us", href: "/#about", icon: Info },
+    { name: "Our Team", href: "/#team", icon: UsersIcon },
+  ];
+
+  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMenu = () => setIsMobileMenuOpen(false);
 
   return (
     <>
@@ -42,46 +55,31 @@ const Header = () => {
       <StickyBanner>
         <header className="py-2 w-full bg-gradient-to-br from-orange-50 to-orange-50  shadow-sm border-b">
           <div className="container mx-auto px-4">
-            <div className="flex items-center justify-between h-16">
-              {/* Logo */}
-              <div className="flex items-center" onClick={()=>navigate("/")} >
-                <div className="flex items-center gap-2">
-                  <div className="w-[240px] h-8 flex items-center justify-center">
-                    <img src={logo}></img>
+            <div className="flex items-center justify-between h-16 w-full">
+              {/* Logo Area (Left) */}
+              <div className="flex-shrink-0">
+                <div 
+                  className="flex items-center cursor-pointer" 
+                  onClick={() => { navigate("/"); closeMenu(); }}
+                >
+                  <div className="w-[160px] sm:w-[240px] h-10 flex items-center justify-start">
+                    <img src={logo} alt="Vertex Logo" className="h-full object-contain" />
                   </div>
                 </div>
               </div>
 
-              {/* Navigation */}
+              {/* Desktop Navigation (Center/Right) */}
               <nav className="hidden md:flex items-center space-x-8">
-                <HashLink
-                  smooth
-                  to="/#top"
-                  className="text-foreground hover:text-primary font-medium transition-colors hover:underline hover:decoration-primary underline-offset-4"
-                >
-                  Home
-                </HashLink>
-                <HashLink
-                  smooth
-                  to="/#services"
-                  className="text-foreground hover:text-primary font-medium transition-colors hover:underline hover:decoration-primary underline-offset-4"
-                >
-                  Services
-                </HashLink>
-                <HashLink
-                  smooth
-                  to="/#about"
-                  className="text-foreground hover:text-primary font-medium transition-colors hover:underline hover:decoration-primary underline-offset-4"
-                >
-                  About Us
-                </HashLink>
-                <HashLink
-                  smooth
-                  to="/#team"
-                  className="text-foreground hover:text-primary font-medium transition-colors hover:underline hover:decoration-primary underline-offset-4"
-                >
-                  Our Team
-                </HashLink>
+                {menuItems.map((item) => (
+                  <HashLink
+                    key={item.name}
+                    smooth
+                    to={item.href}
+                    className="text-foreground hover:text-primary font-medium transition-colors hover:underline hover:decoration-primary underline-offset-4"
+                  >
+                    {item.name}
+                  </HashLink>
+                ))}
                 <Button
                   variant="accent"
                   size="sm"
@@ -92,24 +90,68 @@ const Header = () => {
                 </Button>
               </nav>
 
-              {/* Mobile Menu Button */}
-              {/* <button className="md:hidden">
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button> */}
+              {/* Mobile Menu Toggle (Right Box) */}
+              <button 
+                className="md:hidden flex items-center justify-center p-2.5 rounded-xl bg-white border border-gray-200 shadow-sm text-gray-700 hover:text-primary hover:border-orange-200 hover:bg-orange-50 transition-all z-50"
+                onClick={toggleMenu}
+                aria-label="Toggle Menu"
+              >
+                {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
             </div>
           </div>
+
+          {/* Mobile Menu Overlay */}
+          <AnimatePresence>
+            {isMobileMenuOpen && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                className="md:hidden bg-white border-t overflow-hidden"
+              >
+                <div className="container mx-auto px-4 py-6 space-y-4">
+                  {menuItems.map((item) => (
+                    <HashLink
+                      key={item.name}
+                      smooth
+                      to={item.href}
+                      onClick={closeMenu}
+                      className="flex items-center gap-3 text-lg font-medium text-gray-700 hover:text-primary transition-colors p-2 rounded-lg hover:bg-orange-50"
+                    >
+                      <item.icon className="w-5 h-5 text-primary" />
+                      {item.name}
+                    </HashLink>
+                  ))}
+                  <div className="pt-4 border-t">
+                    <Button
+                      variant="accent"
+                      className="w-full bg-[#56b1b3] flex items-center justify-center gap-2 py-6 text-lg"
+                      onClick={() => {
+                        navigate("/contact-us");
+                        closeMenu();
+                      }}
+                    >
+                      <MessageSquare className="w-5 h-5" />
+                      Contact Us
+                    </Button>
+                  </div>
+                  
+                  {/* Additional Mobile Info */}
+                  <div className="pt-4 space-y-3">
+                    <div className="flex items-center gap-3 text-sm text-gray-500 px-2">
+                      <Phone className="w-4 h-4" />
+                      <span>+91 93744 37099</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm text-gray-500 px-2">
+                      <Mail className="w-4 h-4" />
+                      <span>info@theaccruvia.com</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </header>
       </StickyBanner>
     </>

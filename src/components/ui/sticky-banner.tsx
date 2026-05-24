@@ -26,7 +26,7 @@ export const StickyBanner = ({
   return (
     <motion.div
       className={cn(
-        "sticky inset-x-0 top-0 z-40 flex  min-h-14 w-full items-center justify-center bg-transparent px-4 py-1 bg-gradient-to-br from-orange-50 to-orange-50 ",
+        "sticky inset-x-0 top-0 z-40 flex min-h-14 w-full items-center bg-transparent bg-gradient-to-br from-orange-50 to-orange-50",
         className
       )}
       initial={{
@@ -44,18 +44,7 @@ export const StickyBanner = ({
     >
       {children}
 
-      <motion.button
-        initial={{
-          scale: 0,
-        }}
-        animate={{
-          scale: 1,
-        }}
-        className="absolute top-1/2 right-2 -translate-y-1/2 cursor-pointer"
-        onClick={() => setOpen(!open)}
-      >
-        <CloseIcon className="h-5 w-5 text-white" />
-      </motion.button>
+
     </motion.div>
   );
 };

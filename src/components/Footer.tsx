@@ -225,9 +225,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-lg mb-4">Get in Touch</h3>
             <ul className="space-y-3 text-sm text-gray-400">
-              {/* <li className="flex items-center gap-3 cursor-pointer ">
+              <li className="flex items-center gap-3 cursor-pointer ">
                 <Phone className="w-4 h-4 text-orange-400" /> +97 155 773 6808(Dubai)
-              </li> */}
+              </li>
               <li className="flex items-center gap-3 cursor-pointer ">
                 <Phone className="w-4 h-4 text-orange-400" /> +91 98989 53563
               </li>
