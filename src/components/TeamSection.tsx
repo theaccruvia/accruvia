@@ -12,9 +12,9 @@ const TeamPage = () => {
   const teamMembers = [
     {
       name: "Dhruv Shah",
-      role: "Founder",
+      role: "Co-Founder",
       description:
-        "A distinguished professional with extensive experience in accounting and auditing, Dhruv Shah is driven by a vision of excellence and integrity. His comprehensive expertise in financial reporting, regulatory compliance, and audit oversight enables organizations to achieve operational transparency and sustainable financial growth in an ever-evolving business landscape.",
+      "Dhruv Shah is a seasoned professional with expertise in accounting, auditing, financial reporting, HR audit, HR support, and talent acquisition. Known for his commitment to excellence and integrity, he helps organizations enhance compliance, operational efficiency, and sustainable business growth.",
       image: Lucky,
       social: {
         linkedin: "https://www.linkedin.com/in/dhruv-shah-245195bb",
@@ -36,7 +36,7 @@ const TeamPage = () => {
       name: "Labdhi Shah",
       role: "Client Manager",
       description:
-        "As a board member overseeing taxation, Labdhi Shah plays a key role in guiding clients through complex tax landscapes with clarity and precision. Her expertise spans tax planning, compliance management, and advisory services, helping businesses optimize their tax positions while maintaining full regulatory adherence.",
+      "C.A Labdhi Shah plays a key role in guiding clients through compliance management, and advisory services. Alongside her strong compliance background, she specializes in executive search helping organizations identify and recruit top leadership talent. Her strategic approach enables businesses to achieve regulatory compliance while building high-performing leadership teams.",
       image: Labdhi,
       social: {
         linkedin: "https://www.linkedin.com/in/ca-labdhi-shah-6aa874103",
